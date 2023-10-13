@@ -1,3 +1,17 @@
+vim.g.sonokai_colors_override = {
+  bg0 = { "#101010", "255" },
+  bg1 = { "#000000", "255" },
+  bg2 = { "#000000", "255" },
+  bg4 = { "#000000", "255" },
+  bg_dim = { "#000000", "255" },
+  fg = { "#e2e2e3", "255" },
+  grey = { "#707070", "255" },
+  grey_dim = { "#cccccc", "200" },
+  blue = { "#b2d3d6", "200" },
+}
+
+-- vim.g.airline_theme = "sonokai"
+
 return {
   -- Configure AstroNvim updates
   updater = {
@@ -18,7 +32,15 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "sonokai",
+  plugins = {
+    {
+      "sainnhe/sonokai",
+      config = function()
+        -- vim.g.airline_theme "sonokai"
+      end,
+    },
+  },
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
