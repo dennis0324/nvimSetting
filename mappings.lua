@@ -34,6 +34,21 @@ return {
     ["<leader>yY"] = { '"+yg_', desc = "Yank current location to End of Line to Sys Clipboard" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
+    --
+    -- this is for debugger
+    ["<leader>db"] = {
+      "<cmd> DapToggleBreakpoint <CR>",
+      desc = "Add breakpoint at line",
+    },
+    ["<leader>ds"] = {
+      "<cmd> DapContinue <CR>",
+      desc = "Start or continue the debugger",
+    },
+    ["<leader>dt"] = {
+      "<cmd> DapTerminate <CR>",
+      desc = "Terminate the debugger",
+    },
+    ["<leader>dk"] = { '<Cmd>lua require("dapui").eval()<CR>' },
   },
   t = {
     -- setting a mapping to false will disable it
@@ -42,4 +57,6 @@ return {
   v = {
     ["<leader>y"] = { '"+y', desc = "Yank to System Clipboard" },
   },
+  --   },
+  -- },
 }

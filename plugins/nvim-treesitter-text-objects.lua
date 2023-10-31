@@ -4,7 +4,7 @@ return {
   config = function()
     require("nvim-treesitter.configs").setup {
       modules = {},
-      sync_install = false,
+      sync_install = true,
       ensure_installed = {},
       ignore_install = {},
       auto_install = true,

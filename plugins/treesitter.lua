@@ -32,6 +32,7 @@ return {
       "dockerfile",
       "gitignore",
       "query",
+      "c",
     })
 
     opts.incremental_selection = {
