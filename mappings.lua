@@ -30,8 +30,10 @@ return {
     -- tables with the `name` key will be registered with which-key if it's installed
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
-    ["<leader>yy"] = { '"+yy', desc = "Yank line to System Clipboard" },
-    ["<leader>yY"] = { '"+yg_', desc = "Yank current location to End of Line to Sys Clipboard" },
+    ["<leader>yy"] = { '"*yy', desc = "Yank line to System Clipboard" },
+    ["<leader>yY"] = { '"*yg_', desc = "Yank current location to End of Line to Sys Clipboard" },
+    -- ["pP"] = { '"*p', desc = "paste" },
+    -- ["pp"] = { '"*p', desc = "paste" },
     -- quick save
     -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
     --
@@ -49,13 +51,16 @@ return {
       desc = "Terminate the debugger",
     },
     ["<leader>dk"] = { '<Cmd>lua require("dapui").eval()<CR>' },
+    ["<leader>jj"] = { "<Cmd>m +1<CR>", desc = "move line down one" },
+    ["<leader>kk"] = { "<Cmd>m -2<CR>", desc = "move line up one" },
   },
   t = {
     -- setting a mapping to false will disable it
     -- ["<esc>"] = false,
   },
   v = {
-    ["<leader>y"] = { '"+y', desc = "Yank to System Clipboard" },
+    -- ["<leader>y"] = { '"*y', desc = "Yank to System Clipboard" },
+    -- ["p"] = { '"0p' },
   },
   --   },
   -- },
