@@ -10,7 +10,10 @@ keymap.set("n", "+", "<C-a>")
 keymap.set("n", "-", "<C-x>")
 
 -- deleting word backword
-keymap.set("n", "dw", "vg_d")
+keymap.set("n", "dub", "vg_d", { desc = "deleting until back" })
+keymap.set("n", "duf", "v0d", { desc = "deleting unitl front" })
 
 -- select all
+
 keymap.set("n", "sa", "gg<S-v>G")
+-- JumpList
