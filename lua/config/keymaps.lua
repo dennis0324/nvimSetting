@@ -17,3 +17,15 @@ keymap.set("n", "duf", "v0d", { desc = "deleting unitl front" })
 
 keymap.set("n", "sa", "gg<S-v>G")
 -- JumpList
+
+--neo tree
+keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer", remap = true })
+keymap.set("n", "<leader>E", "<cmd>Neotree toggle dir=~/<cr>", { desc = "Toggle Explorer Root", remap = true })
+
+keymap.set("n", "<leader>o", function()
+  if vim.bo.filetype == "neo-tree" then
+    vim.cmd.wincmd("p")
+  else
+    vim.cmd.Neotree("focus")
+  end
+end, { desc = "Toggle Explorer Focus" })
