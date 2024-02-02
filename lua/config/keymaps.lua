@@ -4,6 +4,14 @@
 
 local keymap = vim.keymap
 local opts = { noremap = true, slient = true }
+
+-- deleting keymap that don't need
+keymap.del("n", "<leader>l")
+
+keymap.del("n", "<leader>e") -- this will change to oil
+
+-- inserting keymap
+
 keymap.set("i", "<esc>", "<cmd>stopinsert<cr>")
 
 keymap.set("n", "+", "<C-a>")
@@ -15,7 +23,7 @@ keymap.set("n", "duf", "v0d", { desc = "deleting unitl front" })
 
 -- select all
 
-keymap.set("n", "sa", "gg<S-v>G")
+keymap.set("n", "sa", "gg<S-v>G", { desc = "select all" })
 -- JumpList
 
 --neo tree
@@ -29,3 +37,8 @@ keymap.set("n", "<leader>o", function()
     vim.cmd.Neotree("focus")
   end
 end, { desc = "Toggle Explorer Focus" })
+
+-- oil
+keymap.set("n", "<leader>e", function()
+  require("oil").toggle_float()
+end)

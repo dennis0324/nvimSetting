@@ -30,7 +30,7 @@ return {
         colors.border_highlight = colorsdefined.color.color15
         -- this is for selection visual background
         -- colors.bg_visual = "#"
-        colors.comment = "#303030"
+        colors.comment = "#606060"
         colors.bg_popup = "#101010"
         colors.bg_highlight = "#202020"
         colors.bg_float = "#101010"
