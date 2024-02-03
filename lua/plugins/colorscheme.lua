@@ -15,7 +15,6 @@
 --   cyan = "#86e1fc",
 --   dark3 = "#545c7e",
 --   dark5 = "#737aa2",
---  #444a73
 
 local colorsdefined = require("config.utils.color")
 
@@ -27,10 +26,11 @@ return {
       opts.on_colors = function(colors)
         colors.bg = "#101010"
         colors.bg_dark = "#000000"
-        colors.border_highlight = colorsdefined.color.color15
+        colors.border_highlight = colorsdefined.theme.color15
         -- this is for selection visual background
         -- colors.bg_visual = "#"
-        colors.comment = "#606060"
+        colors.comment = "#707070"
+
         colors.bg_popup = "#101010"
         colors.bg_highlight = "#202020"
         colors.bg_float = "#101010"
@@ -81,6 +81,15 @@ return {
         }
         hl.NoiceCmdlinePopupTitle = {
           fg = palette.theme.highlight,
+        }
+        hl.GitSignsAdd = {
+          fg = "#d2ebbe",
+        }
+        hl.GitSignsChange = {
+          fg = "#ffcc99",
+        }
+        hl.GitSignsDelete = {
+          fg = palette.theme.color1,
         }
       end
     end,

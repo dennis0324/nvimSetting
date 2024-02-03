@@ -1,16 +1,16 @@
 local palette = require("config.utils.color")
 local colors = {
-  bg = palette.color.primary,
+  bg = palette.theme.primary,
   fg = "#c2c2c2",
-  yellow = palette.color.color3,
+  yellow = palette.theme.color3,
   cyan = "#008080",
-  darkblue = palette.color.color4,
-  green = palette.color.color10,
+  darkblue = palette.theme.color4,
+  green = palette.theme.color10,
   orange = "#FF8800",
-  violet = palette.color.color5,
-  magenta = palette.color.color13,
-  blue = palette.color.color12,
-  red = palette.color.color9,
+  violet = palette.theme.color5,
+  magenta = palette.theme.color13,
+  blue = palette.theme.color12,
+  red = palette.theme.color9,
 }
 
 local conditions = {

@@ -7,8 +7,20 @@ local opts = { noremap = true, slient = true }
 
 -- deleting keymap that don't need
 keymap.del("n", "<leader>l")
+-- keymap.del("n", "<leader><space>")
+-- keymap.del("n", "<leader>/")
 
-keymap.del("n", "<leader>e") -- this will change to oil
+keymap.set("n", "<C-f>", "<Nop>")
+keymap.set("n", "<C-b>", "<Nop>")
+
+keymap.del("n", "H")
+keymap.del("n", "L")
+
+-- changing default keymap
+
+-- page UP and Down
+keymap.set("n", "<C-j>", "<PageDown>")
+keymap.set("n", "<C-k>", "<PageUp>")
 
 -- inserting keymap
 
@@ -24,21 +36,32 @@ keymap.set("n", "duf", "v0d", { desc = "deleting unitl front" })
 -- select all
 
 keymap.set("n", "sa", "gg<S-v>G", { desc = "select all" })
--- JumpList
-
---neo tree
-keymap.set("n", "<leader>e", "<cmd>Neotree toggle<cr>", { desc = "Toggle Explorer", remap = true })
-keymap.set("n", "<leader>E", "<cmd>Neotree toggle dir=~/<cr>", { desc = "Toggle Explorer Root", remap = true })
-
-keymap.set("n", "<leader>o", function()
-  if vim.bo.filetype == "neo-tree" then
-    vim.cmd.wincmd("p")
-  else
-    vim.cmd.Neotree("focus")
-  end
-end, { desc = "Toggle Explorer Focus" })
 
 -- oil
 keymap.set("n", "<leader>e", function()
   require("oil").toggle_float()
+end, { desc = "Toggle Explorer oil" })
+
+-- Vim Illuminate keybinds
+keymap.set("n", "<leader>[", function()
+  require("illuminate").goto_next_reference()
+  vim.api.nvim_feedkeys("zz", "n", false)
+end, { desc = "Illuminate: Goto next reference" })
+
+keymap.set("n", "<leader>]", function()
+  require("illuminate").goto_prev_reference()
+  vim.api.nvim_feedkeys("zz", "n", false)
+end, { desc = "Illuminate: Goto previous reference" })
+
+-- spectre and chnangin words
+-- Press 'S' for quick find/replace for the word under the cursor
+keymap.set("n", "S", function()
+  local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>"
+  local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
+  vim.api.nvim_feedkeys(keys, "n", false)
+end)
+
+-- Open Spectre for global find/replace
+keymap.set("n", "<leader>S", function()
+  require("spectre").toggle()
 end)
