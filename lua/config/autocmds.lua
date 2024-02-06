@@ -4,7 +4,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 
 vim.api.nvim_create_autocmd({ "FileType" }, {
-  pattern = { "JavaScript" },
+  pattern = { "javascript" },
   callback = function()
     vim.b.autoformat = false
   end,
@@ -13,10 +13,6 @@ vim.api.nvim_create_autocmd({ "FileType" }, {
 autocmd({ "BufWritePost" }, {
   pattern = { "*.js" },
   callback = function(ev)
-    -- local handle = io.popen("clang-format -i " .. vim.fn.expand("%"))
-    -- if handle ~= nil then
-    --   handle:close()
-    -- end
     os.execute("clang-format -i " .. vim.fn.expand("%"))
     vim.cmd("e!")
     vim.cmd("redraw!")

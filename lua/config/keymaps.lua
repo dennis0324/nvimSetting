@@ -55,13 +55,13 @@ end, { desc = "Illuminate: Goto previous reference" })
 
 -- spectre and chnangin words
 -- Press 'S' for quick find/replace for the word under the cursor
-keymap.set("n", "S", function()
+keymap.set("n", "R", function()
   local cmd = ":%s/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>"
   local keys = vim.api.nvim_replace_termcodes(cmd, true, false, true)
   vim.api.nvim_feedkeys(keys, "n", false)
 end)
 
 -- Open Spectre for global find/replace
-keymap.set("n", "<leader>S", function()
+keymap.set("n", "<leader>R", function()
   require("spectre").toggle()
 end)
