@@ -10,8 +10,8 @@ keymap.del("n", "<leader>l")
 -- keymap.del("n", "<leader><space>")
 -- keymap.del("n", "<leader>/")
 
-keymap.set("n", "<C-f>", "<Nop>")
-keymap.set("n", "<C-b>", "<Nop>")
+-- keymap.set("n", "<C-f>", "<Nop>")
+-- keymap.set("n", "<C-b>", "<Nop>")
 
 keymap.del("n", "H")
 keymap.del("n", "L")
