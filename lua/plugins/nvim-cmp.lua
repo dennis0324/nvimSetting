@@ -17,12 +17,20 @@ return {
         -- }),
       })
 
-      opts.sources = {
+      -- opts.sources = cmp.config.sources({
+      --   { name = "nvim_lsp" },
+      --   { name = "buffer", max_item_count = 5 },
+      --   { name = "copilot" },
+      --   { name = "path", max_item_count = 5 },
+      -- })
+      opts.sources = cmp.config.sources({
         { name = "nvim_lsp" },
-        { name = "buffer", max_item_count = 5 },
+        { name = "buffer" },
+        { name = "path" },
         { name = "copilot" },
-        { name = "path", max_item_count = 5 },
-      }
+      }, {
+        { name = "buffer" },
+      })
     end,
   },
 }
