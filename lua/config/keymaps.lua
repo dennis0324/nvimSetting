@@ -9,17 +9,14 @@ local opts = { noremap = true, slient = true }
 keymap.del("n", "<leader>l")
 -- keymap.del("n", "<leader><space>")
 -- keymap.del("n", "<leader>/")
-
--- keymap.set("n", "<C-f>", "<Nop>")
--- keymap.set("n", "<C-b>", "<Nop>")
-keymap.set("n", "<C-n>", ":m .+1<CR>==")
-keymap.set("n", "<C-m>", ":m .-2<CR>==")
-
 keymap.del("n", "H")
 keymap.del("n", "L")
 
 -- changing default keymap
+keymap.set("n", "<C-n>", ":m .+1<CR>==")
+keymap.set("n", "<C-m>", ":m .-2<CR>==")
 
+keymap.set("n", "<S-CR>", "o<esc>")
 -- page UP and Down
 keymap.set("n", "<C-j>", "<PageDown>")
 keymap.set("n", "<C-k>", "<PageUp>")
