@@ -16,7 +16,8 @@ keymap.del("n", "L")
 keymap.set("n", "<C-n>", ":m .+1<CR>==")
 keymap.set("n", "<C-m>", ":m .-2<CR>==")
 
-keymap.set("n", "<S-CR>", "o<esc>")
+keymap.set("n", "<CR>", "o<esc>")
+keymap.set("n", "<S-CR>", "O<esc>")
 -- page UP and Down
 keymap.set("n", "<C-j>", "<PageDown>")
 keymap.set("n", "<C-k>", "<PageUp>")
